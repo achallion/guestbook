@@ -22,5 +22,6 @@ server.get('/new-entry', (req, res) => {
     res.render('new-entry')
 })
 
+server.use((req, res) => res.status(404).render('404'))
 
 server.listen(PORT, () => console.log(`Server Listening on port ${PORT}`));
