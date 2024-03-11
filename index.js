@@ -7,7 +7,10 @@ const PORT = process.env.PORT | 3001;
 const server = express();
 
 server.set("views",path.join(__dirname, 'views'))
-server.set("view enginer","ejs")
+server.set("view engine","ejs")
+
+let entries = [];
+server.locals.entries = entries;
 
 server.use(logger)
 
@@ -15,8 +18,8 @@ server.get('/', (req, res) => {
     res.render('index')
 })
 
-server.get('/new_entry', (req, res) => {
-    res.render('new_entry')
+server.get('/new-entry', (req, res) => {
+    res.render('new-entry')
 })
 
 
